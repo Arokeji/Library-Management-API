@@ -40,14 +40,14 @@ const Schema = mongoose.Schema;
 
 export interface IBook {
   title: string;
-  author: IAuthor;
+  author?: IAuthor;
   pages: number;
   rating: number;
   publisher: {
     name: string;
     category: string;
   };
-  coverImage: string;
+  coverImage?: string;
 }
 
 // Creacion del esquema del libro

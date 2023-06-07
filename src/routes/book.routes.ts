@@ -127,7 +127,7 @@ bookRoutes.get("/", async (req: Request, res: Response) => {
       data: books,
     };
 
-    res.json(response);
+    res.status(200).json(response);
   } catch (error) {
     console.error(error);
     res.status(500).json(error);
@@ -168,7 +168,7 @@ bookRoutes.post("/", async (req: Request, res: Response, next: NextFunction) => 
     });
 
     const createdBook = await book.save();
-    return res.status(200).json(createdBook);
+    return res.status(201).json(createdBook);
   } catch (error) {
     next(error);
   }
@@ -242,7 +242,7 @@ bookRoutes.delete("/:id", async (req: Request, res: Response, next: NextFunction
     const id = req.params.id;
     const bookDeleted = await Book.findByIdAndDelete(id);
     if (bookDeleted) {
-      res.json(bookDeleted);
+      res.status(200).json(bookDeleted);
     } else {
       res.status(404).json({});
     }
