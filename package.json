@@ -11,7 +11,9 @@
     "seed:student-course": "ts-node-dev ./src/seeds/student-course.seed.ts --ignore-watch",
     "build": "tsc",
     "build:swagger-json": "ts-node-dev ./src/utils/generate-swagger-json.ts --ignore-watch",
-    "test": "cross-env DB_NAME=DEV-TESTING jest",
+    "test:author": "cross-env DB_NAME=DEV-TESTING jest --silent __tests__/author.test.ts",
+    "test:book": "cross-env DB_NAME=DEV-TESTING jest --silent __tests__/book.test.ts",
+    "test": "npm run test:author && npm run test:book",
     "prepare": "husky install"
   },
   "keywords": [
