@@ -1,3 +1,3 @@
-# S6 Relations
+# Library API
 
-Relaciones
+Ready to use with Jest tests
