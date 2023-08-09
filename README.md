@@ -4,7 +4,7 @@ Ready to use with Jest tests.
 Routes included in Postman.
 
 Project based on:
-- Node.js using TypeScript and MongoDB
+- Node.js using TypeScript and MongoDB.
 
 Included in this project:
 - Express
