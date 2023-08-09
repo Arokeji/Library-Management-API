@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const { connect } = require("../db.js");
 const { Author } = require("../models/Author.js");
-// const { faker } = require("@faker-js/faker");
 
 const authorSeed = async () => {
   try {
@@ -26,29 +25,14 @@ const authorSeed = async () => {
       { user: "chinua@gmail.com", password: "12345678", name: "Chinua Achebe", country: "Nigeria" },
     ];
 
-    // GENERACION DE AUTORES ALEATORIOS
-    // for (let i = 0; i < 5; i++) {
-    //   let newAuthor = {};
-    //   try {
-    //     newAuthor = {
-    //       name: faker.lorem.words(2),
-    //       country: faker.address.country()
-    //     };
-    //   } catch (error) {
-    //     console.error(error);
-    //     console.log(error);
-    //   }
-    //   authorList.push(newAuthor);
-    // }
-
     // Insercion de books
     const documents = authorList.map((author) => new Author(author));
+
     // Encriptado de contraseñas de los usuarios del seed
-    for (let i = 0; i < documents.length; i++) {
-      const document = documents[i];
+    for (const element of documents) {
+      const document = element;
       await document.save();
     }
-    // await Author.insertMany(documents); No ponemos este porque el hash de encriptado lo hace mediante Save
     console.log("Datos insertados correctamente");
   } catch (error) {
     console.error(error);

@@ -1,9 +1,10 @@
 # Library API
 
-Ready to use with Jest tests
+Ready to use with Jest tests.
+Routes included in Postman.
 
 Project based on:
-- Node.js using TypeScript and SQL
+- Node.js using TypeScript and MongoDB
 
 Included in this project:
 - Express

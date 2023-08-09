@@ -6,7 +6,7 @@ export const swaggerOptions: SwaggerOptions = {
     info: {
       title: "Library API",
       version: "1.0.0",
-      description: "This is a simple CRUD API",
+      description: "Library API",
       license: {
         name: "MIT",
         url: "http://mit.com",

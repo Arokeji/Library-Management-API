@@ -24,8 +24,8 @@ const bookRelationsSeed = async () => {
     }
 
     // Asigna un autor aleatorio a cada libro
-    for (let i = 0; i < books.length; i++) {
-      const book = books[i];
+    for (const element of books) {
+      const book = element;
       const randomAuthor = authors[randomNumber(0, authors.length - 1)];
       book.author = randomAuthor._id;
       await book.save();

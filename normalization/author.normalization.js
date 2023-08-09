@@ -9,8 +9,8 @@ const authorNormalization = async () => {
     const authors = await Author.find().select("+password");
     console.log(`Existen ${authors.length} autores en la base de datos.`);
 
-    for (let i = 0; i < authors.length; i++) {
-      const author = authors[i];
+    for (const element of authors) {
+      const author = element;
       console.log(author.country);
       author.country = author.country.toUpperCase();
       await author.save();
