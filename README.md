@@ -3,7 +3,7 @@
 Ready to use with Jest tests
 
 Project based on:
-- Node.js using TypeScript
+- Node.js using TypeScript and SQL
 
 Included in this project:
 - Express
@@ -13,6 +13,9 @@ Included in this project:
 - Dotenv
 - JsonWebToken
 - Mongoose
+- MySQL2
+- Reflect-metadata
+- Multer
 - TypeOrm
 - Validator
 - Eslint & Prettier
