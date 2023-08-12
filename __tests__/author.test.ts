@@ -5,7 +5,7 @@ import { app, server } from "../src/index";
 import { Author, type IAuthor } from "../src/models/mongo/Author";
 import request from "supertest";
 
-describe("Author controller", () => {
+void describe("Author controller", () => {
   const authorMock: IAuthor = {
     user: "JestTest@gmail.com",
     password: "12345678",

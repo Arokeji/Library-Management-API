@@ -7,6 +7,7 @@ import { mongoConnect } from "./databases/mongo-db";
 // Rutas
 import { bookRoutes } from "./routes/book.routes";
 import { authorRoutes } from "./routes/author.routes";
+import { uploadRoutes } from "./routes/file-upload.routes";
 import { swaggerOptions } from "./swagger-options";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUiExpress from "swagger-ui-express";
@@ -54,6 +55,7 @@ app.use(async (_req: Request, _res: Response, next: NextFunction) => {
 // Uso del router
 app.use("/book", bookRoutes);
 app.use("/author", authorRoutes);
+app.use("/file-upload", uploadRoutes)
 app.use("/public", express.static("public"));
 app.use("/", router);
 

@@ -5,7 +5,7 @@ import { app, server } from "../src/index";
 import { Book, type IBook } from "../src/models/mongo/Book";
 import request from "supertest";
 
-describe("Book controller", () => {
+void describe("Book controller", () => {
   const bookMock: IBook = {
     title: "Jesting Testing",
     pages: 100,
