@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "b4fcce00-f1d7-4401-84a8-630ba2f3c635",
-		"name": "Library",
+		"_postman_id": "ae3df00e-f023-4f2d-a6be-280d1029a822",
+		"name": "LibraryAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25693045"
 	},
@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/book/?page=2&limit=10",
+							"raw": "{{base_url}}/book/?page=1&limit=10",
 							"host": [
 								"{{base_url}}"
 							],
@@ -26,7 +26,7 @@
 							"query": [
 								{
 									"key": "page",
-									"value": "2"
+									"value": "1"
 								},
 								{
 									"key": "limit",
@@ -43,14 +43,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/book/title/harry",
+							"raw": "{{base_url}}/book/title/coci",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"book",
 								"title",
-								"harry"
+								"coci"
 							]
 						}
 					},
@@ -62,13 +62,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/book/6448df44145bb3c9572ddbc7",
+							"raw": "{{base_url}}/book/64660dab3aac37bf035424b2",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"book",
-								"6448df44145bb3c9572ddbc7"
+								"64660dab3aac37bf035424b2"
 							]
 						}
 					},
@@ -110,7 +110,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Oon Nota\",\r\n    \"author\": \"Josh Aufderhar\",\r\n    \"pages\": 113,\r\n    \"rating\": 7\r\n}"
+							"raw": "{\r\n    \"title\": \"Oon nota\",\r\n    \"pages\": 10,\r\n    \"rating\": 8,\r\n    \"publisher\": {\r\n        \"name\": \"Trascas2\",\r\n        \"category\": \"red\"\r\n    }\r\n}\r\n"
 						},
 						"url": {
 							"raw": "{{base_url}}/book",
@@ -142,16 +142,283 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"pages\": \"545\"\r\n}"
+							"raw": "{\r\n    \"publisher\": {\r\n        \"category\": \"blue\"\r\n    }\r\n}"
 						},
 						"url": {
-							"raw": "{{base_url}}/book/6448df44145bb3c9572ddbc7",
+							"raw": "{{base_url}}/book/6450e53652c62fc4d7ee345c",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"book",
-								"6448df44145bb3c9572ddbc7"
+								"6450e53652c62fc4d7ee345c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Get authors (filtered)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/author/?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get author by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/author/name/jane",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								"name",
+								"jane"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific author by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/author/645a7d18240615832f443b0a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								"645a7d18240615832f443b0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete specific author by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "user",
+								"value": "admin@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "12345678",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDY2MGRhNzBjOGVkMThjNzBiYTkyODMiLCJhdXRob3JVc2VyIjoibGVvQGdtYWlsLmNvbSIsImlhdCI6MTY4NTAyOTU3NywiZXhwIjoxNjg1MTE1OTc3fQ.GrIKE4tdIECjs-6xWj17Xk5PGeE2xpzr9Pg-hZD6kjY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/author/64660da70c8ed18c70ba9282",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								"64660da70c8ed18c70ba9282"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert an author",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"admin@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"name\": \"Administrador del sistema\",\r\n    \"country\": \"Colombia\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/author",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"admin@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/author/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update specific author by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"cambiazo\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/author/64660da70c8ed18c70ba9281",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								"64660da70c8ed18c70ba9281"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File uploads",
+			"item": [
+				{
+					"name": "Test upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/penny/Desktop/Todo el escritorio/Programacion/Bootcamp The Valley/Modulo 4 - Node/s10-middleware/public/libro3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/file-upload",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"file-upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book cover upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/C:/Users/penny/Desktop/Todo el escritorio/Programacion/Bootcamp The Valley/Modulo 4 - Node/s10-middleware/public/libro3.jpg"
+								},
+								{
+									"key": "bookId",
+									"value": "645a7d1c8352659e7ebb4b35",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/book/cover-upload",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"cover-upload"
 							]
 						}
 					},
@@ -204,6 +471,18 @@
 			"key": "base_url",
 			"value": "localhost:3000",
 			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://s5debugandeploy.vercel.app/book",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "https://s7validationcors.vercel.app",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }

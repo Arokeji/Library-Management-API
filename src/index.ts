@@ -7,9 +7,6 @@ import { mongoConnect } from "./databases/mongo-db";
 // Rutas
 import { bookRoutes } from "./routes/book.routes";
 import { authorRoutes } from "./routes/author.routes";
-import { companyRoutes } from "./routes/company.routes";
-import { studentRoutes } from "./routes/student.routes";
-import { courseRoutes } from "./routes/course.routes";
 import { swaggerOptions } from "./swagger-options";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUiExpress from "swagger-ui-express";
@@ -30,7 +27,7 @@ app.use("/api-docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 // Rutas
 const router = express.Router();
 router.get("/", (_req: Request, res: Response) => {
-  res.send("<h3>Library API for Render</h3>");
+  res.send("<h3>Library API</h3>");
 });
 router.get("*", (_req: Request, res: Response) => {
   res.status(404).send("La pagina solicitada no existe");
@@ -57,9 +54,6 @@ app.use(async (_req: Request, _res: Response, next: NextFunction) => {
 // Uso del router
 app.use("/book", bookRoutes);
 app.use("/author", authorRoutes);
-app.use("/company", companyRoutes);
-app.use("/student", studentRoutes);
-app.use("/course", courseRoutes);
 app.use("/public", express.static("public"));
 app.use("/", router);
 
